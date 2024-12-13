@@ -1,3 +1,10 @@
+<?php
+
+if($_POST["message"]) {
+    mail("leviathaninteractive1990@gmail.com", "Subject:", 
+    $_POST["insert your message here"], "From: an@email.address");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +12,24 @@
 </head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <nav class = "navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href = "#">Blog</a>
+                <ul>
+                    <li><a href = "#"> Art Blog"</a>
+                    </li>
+                    <li><a href = "#"> Tech Blog></a>
+                    </li>
+                    <li><a href = "#"> Design Blog</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li> <a href = "#"> Contact Us!</a></li>
+        </u1>
+    </nav>
     <title>Leviathan Interactive</title>
     <style>
         body {
@@ -18,8 +43,30 @@
     </style>
 <body>
     <div>
-        <h1>Leviathan Interactive</h1>
-        <p class="bold-text">Chasing Greatness</p>
+        <h1 class="title">Leviathan Interactive</h1>
+        <p class="Mission Statement">Leviathan Interactive is a team of Developers pursuing degrees at the University of Wisconsin Stout.
+            <br> Made up of several passionate and hard working artists and computer scientists, working to create an experience for everyone.
+        </p>
+        <img src="image.png" alt = "Team Photo Placeholder, Charlie the Whale">
+        <h1 class = "Contact Title"> Contact Us! </h1>
+
+        <form method = "post" action = "ContactPage.php">
+            <textarea name = "message"></textarea>
+            <input type = "submit" value = "Submit">
+        </form>
+
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                $name = $_POST["name"];
+                $email = $_POST["email"];
+                $message = $_POST["message"];
+
+                echo "Name: " . $name . "<br>";
+                echo "Email: " . $email ."<br>";
+                echo "Message: " . $message ."<br>";
+
+            }
+        ?>
     </div>
 </body>
 </html>

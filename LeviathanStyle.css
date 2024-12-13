@@ -1,9 +1,65 @@
+/* START OF TOP HOVER BAR DEFINITION*/
+.navbar{
+  background-color: #333;
+  position: relative;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  background: black;
+}
+
+.navbar li a{
+  color:white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.navbar ul ul{
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+.navbar ul ul li{
+  display: block;
+}
+
+.navbar li:hover ul {
+  display: block;
+}
+
+.navbar ul ul li a:hover {
+  background-color: #555;
+}
+/* END OF HOVER BAR DEFINITION */
+
+
 body {
-    background-color: lightblue;
-  }
-  
-  body {
-    color: navy;
+    background-color: rgb(6, 0, 78);
+    color: rgb(255, 255, 255);
     margin-left: 20px;
   }
+
+
+@keyframes titleAnimation{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  }
+title{
+    font-size: 50px;
+    animation-name: titleAnimation;
+  }
+
+
+
+
   
