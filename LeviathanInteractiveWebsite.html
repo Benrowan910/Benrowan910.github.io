@@ -1,10 +1,3 @@
-<?php
-
-if($_POST["message"]) {
-    mail("leviathaninteractive1990@gmail.com", "Subject:", 
-    $_POST["insert your message here"], "From: an@email.address");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,29 +11,19 @@ if($_POST["message"]) {
             <li>
                 <a href = "#">Blog</a>
                 <ul>
-                    <li><a href = "#"> Art Blog"</a>
+                    <li><a href = "ArtBlog.html"> Art Blog"</a>
                     </li>
-                    <li><a href = "#"> Tech Blog></a>
+                    <li><a href = "TechBlog.html"> Tech Blog></a>
                     </li>
                     <li><a href = "#"> Design Blog</a>
                     </li>
-
                 </ul>
             </li>
             <li> <a href = "#"> Contact Us!</a></li>
         </u1>
     </nav>
     <title>Leviathan Interactive</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .bold-text {
-            font-weight: bold;
-        }
-    </style>
+
 <body>
     <div>
         <h1 class="title">Leviathan Interactive</h1>
@@ -50,23 +33,30 @@ if($_POST["message"]) {
         <img src="image.png" alt = "Team Photo Placeholder, Charlie the Whale">
         <h1 class = "Contact Title"> Contact Us! </h1>
 
-        <form method = "post" action = "ContactPage.php">
-            <textarea name = "message"></textarea>
-            <input type = "submit" value = "Submit">
-        </form>
+        <section id="contact" style="padding: 40px; background-color: #fff;">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us by filling out the form below:</p>
+            
+            <!-- Contact Form -->
+            <form action="https://formspree.io/f/xldeybnr" method="POST" style="max-width: 600px; margin: 0 auto;">
+                <div style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; font-weight: bold;">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name" style="width: 100%; padding: 10px; font-size: 1rem;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; font-weight: bold;">Your Email</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="Your email" style="width: 100%; padding: 10px; font-size: 1rem;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="message" style="display: block; font-weight: bold;">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Write your message here..." rows="6" style="width: 100%; padding: 10px; font-size: 1rem;"></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 1rem; cursor: pointer;">Send Message</button>
+                </div>
+            </form>
+        </section>
 
-        <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                $name = $_POST["name"];
-                $email = $_POST["email"];
-                $message = $_POST["message"];
-
-                echo "Name: " . $name . "<br>";
-                echo "Email: " . $email ."<br>";
-                echo "Message: " . $message ."<br>";
-
-            }
-        ?>
     </div>
 </body>
 </html>

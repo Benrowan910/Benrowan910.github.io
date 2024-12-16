@@ -10,6 +10,8 @@
   margin:0;
   padding:0;
   background: black;
+  display: flex;
+  align-items: center;
 }
 
 .navbar li a{
@@ -20,6 +22,7 @@
 }
 
 .navbar ul ul{
+  display: none;
   position: absolute;
   top: 100%;
   display: none;
@@ -43,21 +46,64 @@ body {
     background-color: rgb(6, 0, 78);
     color: rgb(255, 255, 255);
     margin-left: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top:50px;
   }
 
 
-@keyframes titleAnimation{
+
+  h1 {
+    font-family: 'Poppins', sans-serif;  /* A clean and modern sans-serif font */
+    font-size: 4rem;  /* Large size for prominence */
+    font-weight: bold;
+    color: #0c4b92;  /* A vibrant, poppy red-orange color */
+    text-align: center;
+    text-transform: uppercase;  /* Makes the title bold and all caps for impact */
+    letter-spacing: 4px;  /* Slight spacing between letters for a dynamic feel */
+    position: relative;  /* For positioning the shadow and other effects */
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+/* Poppy text shadow for a fun, popping effect */
+h1::before {
+    content: ''; 
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(45deg, #1a237e, #283593);  
+    z-index: -1;
+    filter: blur(15px);  /* Blurred gradient background */
+    transition: all 0.3s ease;
+}
+
+
+/* Hover effects for more interactivity */
+h1:hover {
+    transform: scale(1.1);  /* Slightly enlarges on hover for a fun effect */
+    color: #6667be;  /* Changes to a more intense orange when hovered */
+}
+
+/* Animation for dynamic movement */
+@keyframes appearTitle{
+
   0%{
-    opacity: 0;
+    transform:scale(0);
+    opacity:0;
   }
   100%{
-    opacity: 1;
+    transform:scale(1);
+    opacity:1;
   }
-  }
-title{
-    font-size: 50px;
-    animation-name: titleAnimation;
-  }
+}
+
+
+/* Apply the animation */
+h1 {
+    animation: poppyAnimation 1s ease-out;  /* Infinite loop of light rotation */
+}
 
 
 
