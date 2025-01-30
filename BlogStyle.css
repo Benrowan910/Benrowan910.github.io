@@ -88,9 +88,13 @@ body {
 /* Blog Container */
 .blog-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 30px;
     padding: 20px;
+}
+
+.blog-container h2{
+    align-items: center;
+    align-content: center;
 }
 
 /* Blog Sections */
@@ -107,11 +111,14 @@ body {
     margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 2px solid var(--highlight);
+    align-items: center;
+    align-content: center;
 }
 
 /* Blog List */
 .blog-list {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
